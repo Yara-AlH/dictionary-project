@@ -4,10 +4,10 @@ body {
 }
 
 .container {
-  background-color: #f0edf6;
+  background-color: white;
+  border-radius: 6px;
 }
 
 .App {
-  text-align: center;
   color: #212529;
 }
