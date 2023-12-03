@@ -2,7 +2,7 @@ import "./Footer.css";
 
 export default function Footer() {
   return (
-    <div className="Footer">
+    <div className="Footer ">
       This project was coded by{" "}
       <a
         href="https://www.linkedin.com/in/yara-alhawari/"

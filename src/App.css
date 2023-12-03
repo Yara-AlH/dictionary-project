@@ -1,13 +1,18 @@
 body {
-  background-color: #282c34;
-  margin: 50px;
-}
-
-.container {
-  background-color: white;
-  border-radius: 6px;
+  background-color: #f7f5fc;
+  margin: 50px 0;
 }
 
 .App {
   color: #212529;
+}
+
+.heading-top {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.Synonyms .similar {
+  font-weight: 600;
 }

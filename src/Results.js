@@ -1,17 +1,23 @@
 import Meaning from "./Meaning";
+import "./Results.css";
 
 export default function Results(props) {
   if (props.definitions) {
     return (
       <div className="Results">
-        <h3 className="fw-bold mt-5">{props.definitions.word}: </h3>
-        <h4>"{props.definitions.phonetic}"</h4>
+        <section>
+          <div className="word-name">{props.definitions.word} </div>
+          <div className="word-phonetic mt-3">
+            "{props.definitions.phonetic}"
+          </div>
+        </section>
+
         {props.definitions.meanings.map(function (meaning, index) {
           if (index < 3) {
             return (
-              <div key={index}>
+              <section key={index}>
                 <Meaning meaning={meaning} />
-              </div>
+              </section>
             );
           }
           return null;

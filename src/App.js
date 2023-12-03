@@ -5,9 +5,10 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <div className="container ">
+      <div className="heading-top">Dictionary</div>
+      <div className="container">
         <main>
-          <Dictionary defaultKeyword={"marvelous"} />
+          <Dictionary defaultKeyword={"yoga"} />
         </main>
       </div>
       <Footer />

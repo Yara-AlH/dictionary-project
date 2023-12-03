@@ -1,0 +1,12 @@
+.Results .word-name {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 43px;
+}
+
+.Results .word-phonetic {
+  font-size: 18px;
+  line-height: 19px;
+  font-weight: 600;
+  color: #666;
+}
