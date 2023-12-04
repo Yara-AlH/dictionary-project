@@ -4,6 +4,10 @@
   line-height: 29px;
 }
 
+.Meaning em {
+  color: #666;
+}
+
 .Meaning .word-definition {
   font-size: 16px;
 }

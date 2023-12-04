@@ -5,13 +5,15 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <div className="heading-top">Dictionary</div>
+      <a className="heading-top" href="/">
+        Dictionary
+      </a>
       <div className="container">
         <main>
           <Dictionary defaultKeyword={"yoga"} />
         </main>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 body {
   background-color: #f7f5fc;
+  font-family: "Poppins", sans-serif;
   margin: 50px 0;
 }
 
@@ -10,7 +11,14 @@ body {
 .heading-top {
   font-size: 50px;
   font-weight: bold;
+  color: #212529;
+  display: block;
+  margin: 0 auto;
   text-align: center;
+}
+
+.heading-top:hover {
+  text-decoration: none;
 }
 
 .Synonyms .similar {

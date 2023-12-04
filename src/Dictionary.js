@@ -1,18 +1,22 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Results from "./Results";
+import Photos from "./Photos";
 import "./Dictionary.css";
 
 export default function Dictionary(props) {
   const [keyword, setKeyword] = useState(props.defaultKeyword);
   const [definitions, setDefinitions] = useState(null);
+  const [photos, setPhotos] = useState(null);
   const [loaded, setLoaded] = useState(false);
 
-  function handleResponse(response) {
-    console.log(response.data);
-
+  function handleDictionaryResponse(response) {
     setDefinitions(response.data);
-    // response.data.meanings.0.definition
+  }
+
+  function handleImagesResponse(response) {
+    console.log(response.data);
+    setPhotos(response.data.photos);
   }
 
   function handleFormSubmit(event) {
@@ -32,8 +36,12 @@ export default function Dictionary(props) {
   function search() {
     const apiKey = "0c6283dt87dcb24afbce90bd2bac3o16";
     let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${apiKey}`;
+    axios.get(apiUrl).then(handleDictionaryResponse);
 
-    axios.get(apiUrl).then(handleResponse);
+    const imgApiKey = "0c6283dt87dcb24afbce90bd2bac3o16";
+    let imgApiUrl = `https://api.shecodes.io/images/v1/search?query=${keyword}&key=${imgApiKey}`;
+
+    axios.get(imgApiUrl).then(handleImagesResponse);
   }
 
   if (loaded) {
@@ -54,9 +62,10 @@ export default function Dictionary(props) {
               />
             </div>
           </form>
-          <p>i.e paris, wine, yoga, coding</p>
+          <p>i.e paris, wine, sunset, coding</p>
         </section>
         <Results definitions={definitions} />
+        <Photos photos={photos} />
       </div>
     );
   } else {
