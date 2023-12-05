@@ -19,8 +19,9 @@ export default function Results(props) {
                 <Meaning meaning={meaning} />
               </section>
             );
+          } else {
+            return null;
           }
-          return null;
         })}
       </div>
     );

@@ -1,7 +1,6 @@
 import "./App.css";
 
 export default function Synonyms(props) {
-  console.log(props.synonyms);
   if (props.synonyms) {
     return (
       <div className="Synonyms my-3">

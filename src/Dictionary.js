@@ -11,11 +11,16 @@ export default function Dictionary(props) {
   const [loaded, setLoaded] = useState(false);
 
   function handleDictionaryResponse(response) {
-    setDefinitions(response.data);
+    if (response.data.meanings) {
+      setDefinitions(response.data);
+    } else {
+      return alert(
+        `Could not find "${keyword}" in the Dictionary, please try a different word.`
+      );
+    }
   }
 
   function handleImagesResponse(response) {
-    console.log(response.data);
     setPhotos(response.data.photos);
   }
 
@@ -64,6 +69,7 @@ export default function Dictionary(props) {
           </form>
           <p>i.e paris, wine, sunset, coding</p>
         </section>
+
         <Results definitions={definitions} />
         <Photos photos={photos} />
       </div>
