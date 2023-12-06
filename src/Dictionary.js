@@ -21,11 +21,20 @@ export default function Dictionary(props) {
   }
 
   function handleImagesResponse(response) {
-    setPhotos(response.data.photos);
+    if (response.data.total_results > 0) {
+      setPhotos(response.data.photos);
+    } else {
+      return null;
+    }
   }
 
   function handleFormSubmit(event) {
     event.preventDefault();
+    const inputIsValid = /^[a-zA-Z]/.test(keyword);
+
+    if (!inputIsValid) {
+      alert("Please enter a valid word");
+    }
     search();
   }
 
@@ -40,6 +49,7 @@ export default function Dictionary(props) {
 
   function search() {
     const apiKey = "0c6283dt87dcb24afbce90bd2bac3o16";
+
     let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${apiKey}`;
     axios.get(apiUrl).then(handleDictionaryResponse);
 
